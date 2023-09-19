@@ -4,7 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 const NavBer = () => {
 
-    // step-6 MENU ITEM use state
+    // step-5 MENU ITEM use state
     const [open, setOpen] = useState(false)
 
     // step-1 
@@ -21,10 +21,8 @@ const NavBer = () => {
 
 
     return (
-        <nav>
-
-
-            {/* step-5 Menu icon add and onClick add */}
+        <nav className="bg-red-200 rounded-lg p-6 m-6 lg:p-0 lg:m-6 ">
+            {/* step-6 Menu icon add and onClick add */}
             <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
                 {/* step-7 open and close*/}
                 {
@@ -34,8 +32,13 @@ const NavBer = () => {
                 }
             </div>
 
-            {/* step-2  */}
-            <ul className="md:flex ">
+
+
+            <ul className={`
+            //  step-8    
+            ${open ? 'top-16' : '-top-80'} duration-1000
+            md:flex absolute md:static bg-red-200 rounded-lg p-6 m-6`}>
+                {/* step-2  */}
                 {
                     routes.map(route => <Link
                         key={route.id}
